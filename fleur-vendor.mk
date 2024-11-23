@@ -322,7 +322,6 @@ PRODUCT_PACKAGES += \
     libladder \
     libmtk_bsg \
     libmtk_drvb \
-    libmtkares \
     libmtkcutils \
     libmtkproperty \
     libmtkrillog \
@@ -407,7 +406,7 @@ PRODUCT_PACKAGES += \
     gatekeeper.beanpod \
     gps.default \
     hwcomposer.mt6781 \
-    sensors.elliptic \
+    sensors.elliptic@2.0 \
     sensors.mt6781 \
     vendor.mediatek.hardware.camera.atms@1.0-impl \
     vendor.mediatek.hardware.camera.bgservice@1.1-impl \
@@ -903,7 +902,6 @@ PRODUCT_PACKAGES += \
     libaal_key \
     libaal_mtk \
     libaalservice \
-    libacdk \
     libaiawb_moon \
     libaiawb_moon_model \
     libaiawb_p1ggm \
@@ -995,7 +993,6 @@ PRODUCT_PACKAGES += \
     libcameracustom.eis \
     libcameracustom.flashlight \
     libcameracustom.lens \
-    libcameracustom.plugin \
     libcameracustom \
     libcameracustom_all_sensor_modules \
     libcarrierconfig \
@@ -1070,6 +1067,7 @@ PRODUCT_PACKAGES += \
     libmsnr \
     libmtk-fusion-ril-prop-vsim \
     libmtk-ril \
+    libmtkares \
     libmtkcam.atmseventmgr \
     libmtkcam.eventcallback \
     libmtkcam.featurepipe.capture \

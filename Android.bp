@@ -5,9 +5,9 @@
 soong_namespace {
 	imports: [
 		"device/xiaomi/fleur",
+		"hardware/xiaomi",
 		"hardware/mediatek",
-		"hardware/mediatek/libmtkperf_client",
-		"hardware/xiaomi"
+		"hardware/mediatek/libmtkperf_client"
 	],
 }
 
@@ -341,27 +341,6 @@ cc_prebuilt_library_shared {
 		android_arm64: {
 			srcs: ["proprietary/vendor/lib64/libmtk_drvb.so"],
 			shared_libs: ["libcutils", "libutils", "liblog", "libc++", "libc", "libm", "libdl", ],
-		},
-	},
-	compile_multilib: "both",
-	prefer: true,
-	soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-	name: "libmtkares",
-	owner: "xiaomi",
-	strip: {
-		none: true,
-	},
-	target: {
-		android_arm: {
-			srcs: ["proprietary/vendor/lib/libmtkares.so"],
-			shared_libs: ["libcares_naptr", "libc++", "libc", "libm", "libdl", ],
-		},
-		android_arm64: {
-			srcs: ["proprietary/vendor/lib64/libmtkares.so"],
-			shared_libs: ["libcares_naptr", "libc++", "libc", "libm", "libdl", ],
 		},
 	},
 	compile_multilib: "both",
@@ -1869,14 +1848,14 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-	name: "sensors.elliptic",
+	name: "sensors.elliptic@2.0",
 	owner: "xiaomi",
 	strip: {
 		none: true,
 	},
 	target: {
 		android_arm64: {
-			srcs: ["proprietary/vendor/lib64/hw/sensors.elliptic.so"],
+			srcs: ["proprietary/vendor/lib64/hw/sensors.elliptic@2.0.so"],
 			shared_libs: ["android.hardware.sensors@2.0", "android.hardware.sensors@2.0-ScopedWakelock", "libhidlbase", "libbase", "liblog", "libutils", "libnotifyaudiohal", "libc++", "libc", "libm", "libdl", ],
 		},
 	},
@@ -10313,23 +10292,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-	name: "libacdk",
-	owner: "xiaomi",
-	strip: {
-		none: true,
-	},
-	target: {
-		android_arm64: {
-			srcs: ["proprietary/vendor/lib64/libacdk.so"],
-			shared_libs: ["libcutils", "libimageio", "libcam.iopipe", "libmtkcam_stdutils", "libmtkcam_imgbuf", "libcam.halsensor", "libmtkcam_metadata", "libdrm", "libminiui", "libhardware", "libutils", "libmtkcam_fwkutils", "libmtkcam_modulehelper", "libion", "libion_mtk", "libcamdrv_imem", "libmtkcam_metastore", "libJpgEncPipe", "liblog", "libmtkcam_ulog", "libc++", "libc", "libm", "libdl", ],
-		},
-	},
-	compile_multilib: "64",
-	prefer: true,
-	soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
 	name: "libaiawb_moon",
 	owner: "xiaomi",
 	strip: {
@@ -11877,23 +11839,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-	name: "libcameracustom.plugin",
-	owner: "xiaomi",
-	strip: {
-		none: true,
-	},
-	target: {
-		android_arm64: {
-			srcs: ["proprietary/vendor/lib64/libcameracustom.plugin.so"],
-			shared_libs: ["liblog", "libutils", "libcutils", "libmtkcam_stdutils", "libremosaiclib", "libremosaic_wrapper", "libc++", "libc", "libm", "libdl", ],
-		},
-	},
-	compile_multilib: "64",
-	prefer: true,
-	soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
 	name: "libcameracustom",
 	owner: "xiaomi",
 	strip: {
@@ -13146,6 +13091,23 @@ cc_prebuilt_library_shared {
 		android_arm64: {
 			srcs: ["proprietary/vendor/lib64/libmtk-ril.so"],
 			shared_libs: ["libmtkutils", "librilfusion", "libmtknetutils", "libratconfig", "libmtksysutils", "libmtkhardware_legacy", "libsysenv", "libmtkrilutils", "libcrypto", "libmtkcutils", "libmtkproperty", "libmtkrillog", "libmtkconfigutils", "libmtktinyxml", "libmtkares", "libnvram", "vendor.mediatek.hardware.nvram@1.1", "libbinder", "libhardware", "libhidlbase", "libhidltransport", "libmtknetcap", "libwpfa", "libaedv", "libmipc", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "64",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmtkares",
+	owner: "xiaomi",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm64: {
+			srcs: ["proprietary/vendor/lib64/libmtkares.so"],
+			shared_libs: ["libcares_naptr", "libc++", "libc", "libm", "libdl", ],
 		},
 	},
 	compile_multilib: "64",
