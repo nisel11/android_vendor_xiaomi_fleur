@@ -6,4 +6,16 @@ LOCAL_PATH := $(call my-dir)
 
 ifeq ($(TARGET_DEVICE),fleur)
 
+$(call add-radio-file-sha1-checked,radio/audio_dsp.img,ae621ef1e92cff67861e3e69e33cf87d9c946470)
+$(call add-radio-file-sha1-checked,radio/gz.img,ea7f78793412554b189d32c9c39469c7da8b292b)
+$(call add-radio-file-sha1-checked,radio/lk.img,1f91c12b884c22570af669383c466d29dbce374d)
+$(call add-radio-file-sha1-checked,radio/logo.img,f8e893295dbdd07dd1950f9f2c39abd09851f429)
+$(call add-radio-file-sha1-checked,radio/md1img.img,ef140ff3961a5f2be5da7b505f7dd8dee190d6bb)
+$(call add-radio-file-sha1-checked,radio/pi_img.img,407e80efbfb7f3b8d718281e3301c0f771672db1)
+$(call add-radio-file-sha1-checked,radio/preloader_raw.img,f693986436fd9723e1f4dacfea468b415aec5900)
+$(call add-radio-file-sha1-checked,radio/scp.img,0733020b3c4b7df0b113a2bd3b6a392050713f0c)
+$(call add-radio-file-sha1-checked,radio/spmfw.img,16c2c9499db6d5af2f6f8dee9af5f3908d2e25e4)
+$(call add-radio-file-sha1-checked,radio/sspm.img,d2ad212208076ffbfc4fd874b15dd925fedca590)
+$(call add-radio-file-sha1-checked,radio/tee.img,d3ea5310b17f6aff0f0e6a1c3d3c7814cac6b38f)
+
 endif
