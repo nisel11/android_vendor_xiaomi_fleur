@@ -1,14 +1,13 @@
 #!/bin/bash
 
 # Paths
-SEA_DIR=$PWD/vendor-sea
-FLEUR_SRC_DIR=$PWD/vendor-fleur
-FLEUR_DEST_DIR=$PWD/vendorz
+SEA_DIR=$PWD/sea
+FLEUR_DIR=$PWD/fleur
+DEST_DIR=$PWD/final-vendor
 MISSING_LOG=missing.txt
 
-# File lists
-P_FILES_TXT=pfiles-sea.txt
-P_FILES_FLEUR_TXT=pfiles-fleur.txt
+# File list
+P_FILES_TXT=proprietary-files.txt
 
 # Clear previous missing file log
 > "$MISSING_LOG"
@@ -67,14 +66,17 @@ process_line() {
   fi
 }
 
-# Copy files from banana1.txt (from SEA_DIR to FLEUR_DEST_DIR)
-while IFS= read -r file; do
-  process_line "$SEA_DIR" "$FLEUR_DEST_DIR" "$file"
+# Determine source directory based on comments
+current_src_dir=$SEA_DIR  # Default directory
+while IFS= read -r line; do
+  if [[ "$line" =~ ^# ]]; then
+    if [[ "$line" =~ from ]]; then
+      current_src_dir=$FLEUR_DIR
+    else
+      current_src_dir=$SEA_DIR
+    fi
+  else
+    process_line "$current_src_dir" "$DEST_DIR" "$line"
+  fi
 done < "$P_FILES_TXT"
-
-# Copy files from banana2.txt (from FLEUR_SRC_DIR to FLEUR_DEST_DIR)
-while IFS= read -r file; do
-  process_line "$FLEUR_SRC_DIR" "$FLEUR_DEST_DIR" "$file"
-done < "$P_FILES_FLEUR_TXT"
-
-cp -r priv-app vendorz/system/
+echo 'I'm lazy to use some gold blobs so use sea'
